@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="android, app, learn german,partizip, irregular verben">
     <meta name="description" content="Ja Irre-Verben is an android application thought for learning partizip forms of german">
-    <meta name="author" content="Davide Prati">
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -73,7 +72,7 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_EN/all.js#xfbml=1&appId=476983569010542";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=476983569010542";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 

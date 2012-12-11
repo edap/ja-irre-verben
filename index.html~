@@ -3,10 +3,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Template &middot; Bootstrap</title>
+    <title>Ja Irre Verben application</title>
+        <meta property="og:title" content="Ja Irre Verben"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://edapx.com/ja-irre-verben/" />
+        <meta property="og:image" content="http://edapx.com/ja-irre-verben/ico/apple-touch-icon-144-precomposed.png"/>
+        <meta property="og:description" content="Ja Irre-Verben is an android application thought for learning partizip forms of german"/>
+        <meta property="og:site_name" content="Ja Irre Verben"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="android, app, learn german,partizip, irregular verben">
+    <meta name="description" content="Ja Irre-Verben is an android application thought for learning partizip forms of german">
+    <meta name="author" content="Davide Prati">
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -29,10 +37,6 @@
       .jumbotron {
         margin: 30px 0;
         text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
       }
       .jumbotron .btn {
         font-size: 21px;
@@ -63,6 +67,14 @@
   </head>
 
   <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1&appId=211984838924670";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <a href="http://github.com/edap/ja-irre-verben">
 <img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" style="position: absolute; top: 0; right: 0; border: 0;">
 </a>
@@ -76,12 +88,18 @@
       <hr>
 
       <div class="jumbotron">
+
+
+
         <iframe src="http://player.vimeo.com/video/55345258?badge=0&amp;color=cccccc" width="700" height="394" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         <p class="lead"></p>
         <a class="btn btn-large btn-success" href="#">Download it</a>
       </div>
 
       <hr>
+
+
+
 
       <div class="row-fluid marketing">
         <div class="span6">
@@ -114,6 +132,31 @@
       <div class="footer">
 	      <p>Developed by <a href="http://edapx.com">edapx</a>. Soundtrack
 	      by <a href="https://soundcloud.com/eric-skiff/jumpshot">Eric Skiff</a></p>
+<p>
+<div style="float:left; padding:0 2px; width:122px">
+<div class="fb-like" data-href="http://edapx.com/ja-irre-verben/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+</div>
+
+<div style="float:left; padding:0 2px; width:100px">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://edapx.com/ja-irre-verben/" data-via="edapx">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<div style="float:left; padding:0 2px; width:100px">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="medium"></div>
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</p>
+
       </div>
 
     </div> <!-- /container -->

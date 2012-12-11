@@ -11,58 +11,69 @@ Score score;
 Dictionary dictionary;
 
 //general
-color screenBg = #3c30c4;
-int fontsize = 22;
+color screenBg;
+int fontsize;
 PFont myFont;
 
 //cursor
 PVector cursorLocation;
 PVector cursorVelocity;
-color cursorColor = #ffff80;
-color cursorWrong = #ff0080;
-int fingerSpace = 100;
+color cursorColor;
+color cursorWrong;
+int fingerSpace;
 
 //score
-int Scorefontsize = 18;
-color scoreBgColor = #5453db;
-color scoreColor = #fabaf8;
-float levelOfDifficulty = 3.8;
-float scaleDifficulty = 0.3;
-int maxErrors = 3;
-int verbIndex = 0;
+int Scorefontsize;
+color scoreBgColor;
+color scoreColor;
+float levelOfDifficulty;
+float scaleDifficulty;
+int maxErrors;
+int verbIndex;
 
 //irregular verbs possibilietes
-color irregularsColor = #00ff89;
+color irregularsColor;
 float[] screenPosition = { 0.25, 0.75 };
 
 void setup(){
-  //AUDIO
-  initializeAudio();
-
+  Scorefontsize = 18;
+  scoreBgColor = #5453db;
+  scoreColor = #fabaf8;
+  levelOfDifficulty = 3.8;
+  scaleDifficulty = 0.3;
+  maxErrors = 3;
+  verbIndex = 0;  
+  
+  screenBg = #3c30c4;
+  fontsize = 22;
   myFont = loadFont("Amstrad-CPC-correct.vlw");
   textFont(myFont, fontsize);  
-  //leva size quando sei su android  
+  //only for java mode 
   //size(500, 500);
-  playAgainButton();
-
-  //SCORE
+  cursorColor = #ffff80;
+  cursorWrong = #ff0080;
+  fingerSpace = 100;  
+  
   score = new Score(levelOfDifficulty, scaleDifficulty, maxErrors, scoreBgColor, scoreColor, Scorefontsize);
-  //DICTIONARY
   dictionary = new Dictionary("de_DE");
     
-  //POSSIBILITIES
+  //possibilieties
+  irregularsColor = #00ff89; 
   PVector blockVelocity = new PVector(0, score.difficulty);
   irregularverbs  = new Box[2];
-
   for (int i = 0; i < 2; i++) {
     PVector blockLocation = new PVector((width * screenPosition[i]), 0);
     irregularverbs[i] = new Box(blockLocation, blockVelocity, 0, fontsize, "", irregularsColor, false);
   }
-  dictionary.setNewContent(irregularverbs, verbIndex); 
-  
+  dictionary.setNewContent(irregularverbs, verbIndex);   
   PVector cursorLocation = new PVector((width/2), (height - int(fingerSpace))); 
   PVector cursorVelocity = new PVector(0,0);
-  decision = new Box(cursorLocation, cursorVelocity, fingerSpace, fontsize, dictionary.currentInfinitive, cursorColor, true);    
+  decision = new Box(cursorLocation, cursorVelocity, fingerSpace, fontsize, dictionary.currentInfinitive, cursorColor, true); 
+
+  //AUDIO
+  initializeAudio(); 
+  
+  playAgainButton(); 
 }
 
 void draw(){
@@ -78,7 +89,7 @@ void draw(){
     decision.drive();
     displayPossibilities();    
         
-    if(irregularverbs[0].location.y > (decision.location.y)){  
+    if(irregularverbs[0].location.y > (decision.location.y)){ 
       if(decision.isRight(irregularverbs[0], irregularverbs[1])){
         decision.correct = true;
         updateVelocity();
@@ -148,7 +159,6 @@ void restoreInitialValue(float tmpDifficulty){
 }
 
 //AUDIO
-
 void initializeAudio(){
   player = new APMediaPlayer(this);
   player.setMediaFile("Jumpshot.mp3");
@@ -157,7 +167,7 @@ void initializeAudio(){
   player.setLooping(true);   
 }
 
-public void onDestroy(){
+void onDestroy(){
   super.onDestroy(); 
   if(player != null) { 
     player.release();
@@ -165,7 +175,7 @@ public void onDestroy(){
   }
 }
 
-public void onStop() {
+void onStop() {
   super.onStop(); 
   if(player != null) {
     player.release();
@@ -173,7 +183,7 @@ public void onStop() {
   }
 }
 
-public void onResume() {
+void onResume() {
   super.onResume();  
   if(player != null) {
     player.start();

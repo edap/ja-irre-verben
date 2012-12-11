@@ -24,8 +24,13 @@ class Box {
     c = tmpColor;
   }
  
-  void display(){      
-    textSize(fontsize);
+  void display(){
+    //resize text if too large
+    if(twidth >= ((width/2)-10)){
+      textSize(fontsize-2);
+    }else{
+      textSize(fontsize);
+    }        
     fill(c);    
     textAlign(CENTER); 
     text(textContent, location.x, location.y);  
@@ -83,7 +88,6 @@ class Box {
        background(tmpColor);
        c = tmpColor;
      }else{
-       //background(tmpColor);
        c = tmpColorWrong;       
      } 
         

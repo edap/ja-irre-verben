@@ -2,7 +2,7 @@
 android/
 
 # logo und images
-graphics
+graphics/
 
 # Java class files
 *.class

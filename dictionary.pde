@@ -30,7 +30,6 @@ class Dictionary{
     return verbList;
   }
 
-  //crea un arrai con gli indici mischiati, in modo che ad ogni avvio venga sempre chiamato un verbo diverso
   int[] getRandomList(){
     int maximum = verbList.length();
     totVerbs = maximum;
@@ -47,7 +46,6 @@ class Dictionary{
       indexes[i] = indexes[position];
       indexes[position] = temp;        
     }
-    //println(indexes);
     return indexes;
   }
   
@@ -71,7 +69,6 @@ class Dictionary{
     return verbNode;
   }     
  
-  //ritorna l'infinito del verbo corrente
   String getInfinitiv(JSONObject tmpVerbnode){
     JSONArray names = tmpVerbnode.names();
     String selectedVerb = null;
@@ -83,8 +80,7 @@ class Dictionary{
     return selectedVerb;
   } 
  
-  //ritorna un map con i verbi disponibili e il valore true o false per
-  //ciascuno di questi 
+  //it returns a map with the current the 2 available possibilieties for each verb 
   Map getConiugations(String selected_verb, JSONObject verb_node){
     JSONObject coniugation_availables = null;
     try{
@@ -115,7 +111,7 @@ class Dictionary{
       for (Object key : coniugations.keySet()) {
           boolean di = (Boolean) coniugations.get(key);
           irregularverbs[i].getNewcontent(key.toString(), di);
-          //falling from the top
+          //irregular verbs are falling from the top
           irregularverbs[i].location.y = 0;
           if(i == 0){
             i =1;
